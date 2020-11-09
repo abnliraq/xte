@@ -39,7 +39,7 @@ from uniborg.util import admin_cmd
 from telethon import events
 
 
-@borg.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True)) 
+@borg.on(admin_cmd(pattern="حرق(?: |$)(.*)", outgoing=True)) 
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))
@@ -60,13 +60,13 @@ async def deepfryer(event):
         return
 
     # download last photo (highres) as byte array
-    await event.edit("`Downloading media…`")
+    await event.edit("`تحميل الوسائط…`")
     image = io.BytesIO()
     await event.client.download_media(data, image)
     image = Image.open(image)
 
     # fry the image
-    await event.edit("`Deep frying media…`")
+    await event.edit("`حرق الميديا…`")
     for _ in range(frycount):
         image = await deepfry(image)
 
