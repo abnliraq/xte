@@ -1,7 +1,7 @@
 # Code from pro sar Spechide's fork of Uniborg.
 """Rename Telegram Files
 Syntax:
-.rnupload file.name"""
+.اعادة تسمية file.name"""
 
 import asyncio
 import time
@@ -20,14 +20,14 @@ from uniborg.util import progress, humanbytes, time_formatter, admin_cmd
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
 
-@borg.on(admin_cmd(pattern="rnupload (.*)"))
+@borg.on(admin_cmd(pattern="اعادة تسمية (.*)"))
 async def _(event):
     if event.fwd_from:
         return
     thumb = None
     if os.path.exists(thumb_image_path):
         thumb = thumb_image_path
-    await event.edit("⚡️`Rename and upload in progress, please wait!`⚡️")
+    await event.edit("⚡️`جار تغيير اسم الملف, انتظر من فضلك @X3RAQE!`⚡️")
     input_str = event.pattern_match.group(1)
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
@@ -61,5 +61,5 @@ async def _(event):
         else:
             await event.edit("File Not Found {}".format(input_str))
     else:
-        await event.edit("Syntax // .rnupload file.name as reply to a Telegram media")
+        await event.edit("Syntax // .اعادة تسمية file.name as reply to a Telegram media")
 
