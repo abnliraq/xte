@@ -10,7 +10,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "**No Name set yet.** [Check Gu
 
 @command(outgoing=True, pattern="^.alive$")
 async def amireallyalive(alive):
-    """ For .alive command, التليثون شغال تاج راسي.  """
+    """ اكتب .alive حتى تعرف اشتغل لو لا.  """
     await alive.edit("`Currently Alive, شلون الحجي!` **ψ(｀∇´)ψ**\n\n"
                      "`Telethon version: 6.9.0\nPython: 3.7.3\n`"
                      "`Bot Edited by:` [x3raqe](https://t.me//x3raqe), @x3raqe\n"
