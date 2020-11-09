@@ -13,7 +13,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.utils import register, errors_handler
 
 
-@register(outgoing=True, pattern="^.purge$")
+@register(outgoing=True, pattern="^.مسح$")
 @errors_handler
 async def fastpurger(purg):
     """ For .purge command, purge all messages starting from the reply. """
@@ -34,18 +34,18 @@ async def fastpurger(purg):
         await purg.client.delete_messages(chat, msgs)
     done = await purg.client.send_message(
         purg.chat_id,
-        "`Fast purge complete!\n`Purged " + str(count) + " messages.",
+        "`اكتمل المسح @X3RAQE!\n`تم مسح " + str(count) + " رسالة.",
     )
 
     if BOTLOG:
         await purg.client.send_message(
             BOTLOG_CHATID,
-            "Purge of " + str(count) + " messages done successfully.")
+            "تم مسح " + str(count) + " الرسائل بنجاح.")
     await sleep(2)
     await done.delete()
 
 
-@register(outgoing=True, pattern="^.purgeme")
+@register(outgoing=True, pattern="^.مسح رسائلي")
 @errors_handler
 async def purgeme(delme):
     """ For .purgeme, delete x count of your latest message."""
@@ -62,12 +62,12 @@ async def purgeme(delme):
 
     smsg = await delme.client.send_message(
         delme.chat_id,
-        "`Purge complete!` Purged " + str(count) + " messages.",
+        "`تم مسح!` Purged " + str(count) + " رسالة.",
     )
     if BOTLOG:
         await delme.client.send_message(
             BOTLOG_CHATID,
-            "Purge of " + str(count) + " messages done successfully.")
+            "تم مسح " + str(count) + " رسائلي بنجاح.")
     await sleep(2)
     i = 1
     await smsg.delete()
