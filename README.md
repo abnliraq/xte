@@ -3,7 +3,7 @@
 Join https://t.me/x3raqe for updates and tuts
 ### The Easy Way
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/abnliraq/xte.git)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/abnliraq/xte/tree/X3raqe)
 
 ### UniBorg Configuration
 
