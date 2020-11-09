@@ -1,11 +1,9 @@
-# FORK AT YOUR OWN RISK
-# Documentation/Guide, visit [How2Techy](https://how2techy.com/x-tra-userbot-plugin-guide-part1/)
+# @x3raqe
 # Installing
-Join https://t.me/XtraTgBot for updates and tuts
+Join https://t.me/x3raqe for updates and tuts
 ### The Easy Way
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/abnliraq/xte/tree/master)
 
 ### UniBorg Configuration
 
