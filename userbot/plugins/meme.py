@@ -40,7 +40,7 @@ Bonus : Flower Boquee Generater
 usage:- .flower
 
 """
-@borg.on(events.NewMessage(pattern=r"\.flower", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.وردة", outgoing=True))
 async def meme(event):
     if event.fwd_from:
         return   
