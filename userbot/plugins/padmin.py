@@ -26,7 +26,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "padmin":
+    if input_str == "صلاحيات":
 
         await event.edit(input_str)
 
@@ -51,7 +51,7 @@ async def _(event):
             "**(8) Change Chat Info: ☑️**",
             "**(8) Change Chat Info: ✅**",
             "**Permission Granted Successfully**",
-            "**pRoMooTeD SuCcEsSfUlLy bY: @A_Dark_Princ3**"
+            "**pRoMooTeD SuCcEsSfUlLy bY: @X3RAQE**"
 
  ]
 
