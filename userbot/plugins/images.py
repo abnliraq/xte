@@ -12,9 +12,9 @@ from re import findall
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="img ?(.*)"))
+@borg.on(admin_cmd(pattern="صورة ?(.*)"))
 async def img_sampler(event):
-    await event.edit("`Processing...`")
+    await event.edit("`جار البحث @X3RAQE...`")
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
