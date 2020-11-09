@@ -1,4 +1,4 @@
-"""command: .currency usd inr"""
+"""command: .العملة usd inr"""
 from telethon import events
 import asyncio
 from datetime import datetime
@@ -6,7 +6,7 @@ import requests
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="currency (.*)"))
+@borg.on(admin_cmd(pattern="العملة (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -34,7 +34,7 @@ async def _(event):
     ms = (end - start).seconds
 
  
-@borg.on(admin_cmd(pattern="currencies (.*)"))
+@borg.on(admin_cmd(pattern="العملات (.*)"))
 async def list(ups):
     if ups.fwd_from:
         return
