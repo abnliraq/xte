@@ -15,13 +15,13 @@ async def _(event):
     animation_interval = 0.3
     animation_ttl = range(0, 16)
     input_str = event.pattern_match.group(1)
-    if input_str == "gaand":
+    if input_str == "تعبان":
         await event.edit(input_str)
         animation_chars = [
-            "me",
-            "loge",
-            "kya?",
-            "gaand"
+            "اني",
+            "تعبان",
+            "شلون انتحر?",
+            "):"
         ]
         for i in animation_ttl:
             await asyncio.sleep(animation_interval)
