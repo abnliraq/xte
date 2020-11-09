@@ -1,5 +1,5 @@
 """IX.IO pastebin like site
-Syntax: .paste"""
+Syntax: .لصق"""
 from telethon import events
 import asyncio
 from datetime import datetime
@@ -12,7 +12,7 @@ def progress(current, total):
     logger.info("Downloaded {} of {}\nCompleted {}".format(current, total, (current / total) * 100))
 
 
-@borg.on(admin_cmd("paste ?(.*)"))
+@borg.on(admin_cmd("لصق ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -20,7 +20,7 @@ async def _(event):
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     input_str = event.pattern_match.group(1)
-    message = "SYNTAX: `.paste <long text to include>`"
+    message = "SYNTAX: `. لصق <نص طويل>`"
     if input_str:
         message = input_str
     elif event.reply_to_msg_id:
@@ -41,7 +41,7 @@ async def _(event):
         else:
             message = previous_message.message
     else:
-        message = "SYNTAX: `.paste <long text to include>`"
+        message = "SYNTAX: `.لصق <نص طويل>`"
     url = "https://del.dog/documents"
     r = requests.post(url, data=message.encode("UTF-8")).json()
     url = f"https://del.dog/{r['key']}"
