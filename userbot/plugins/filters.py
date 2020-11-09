@@ -3,9 +3,9 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """Filters
 Available Commands:
-.savefilter
-.listfilters
-.clearfilter"""
+.اضف رد
+.الردود
+.حذف رد"""
 import asyncio
 import re
 from telethon import events, utils
@@ -65,7 +65,7 @@ async def on_snip(event):
                 last_triggered_filters[event.chat_id].remove(name)
 
 
-@command(pattern="^.savefilter (.*)")
+@command(pattern="^.اضف رد (.*)")
 async def on_snip_save(event):
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
@@ -84,20 +84,20 @@ async def on_snip_save(event):
                 snip['hash'] = media.access_hash
                 snip['fr'] = media.file_reference
         add_filter(event.chat_id, name, snip['text'], snip['type'], snip.get('id'), snip.get('hash'), snip.get('fr'))
-        await event.edit(f"filter {name} saved successfully. Get it with {name}")
+        await event.edit(f"الرد {name} تم اضافته بنجاح. اكتب {name}")
     else:
-        await event.edit("Reply to a message with `savefilter keyword` to save the filter")
+        await event.edit("رد على الرد وااكتب النص الاساسي `اضف رد` لحفظ الرد")
 
 
-@command(pattern="^.listfilters$")
+@command(pattern="^.الردود$")
 async def on_snip_list(event):
     all_snips = get_all_filters(event.chat_id)
-    OUT_STR = "Available Filters in the Current Chat:\n"
+    OUT_STR = "الردود في المجموعة:\n"
     if len(all_snips) > 0:
         for a_snip in all_snips:
             OUT_STR += f"👉 {a_snip.keyword} \n"
     else:
-        OUT_STR = "No Filters. Start Saving using `.savefilter`"
+        OUT_STR = "لا يوجد ردود."
     if len(OUT_STR) > 4096:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "filters.text"
@@ -106,7 +106,7 @@ async def on_snip_list(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="Available Filters in the Current Chat",
+                caption="الردود في المجموعة",
                 reply_to=event
             )
             await event.delete()
@@ -114,14 +114,14 @@ async def on_snip_list(event):
         await event.edit(OUT_STR)
 
 
-@command(pattern="^.clearfilter (.*)")
+@command(pattern="^.حذف رد (.*)")
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_filter(event.chat_id, name)
-    await event.edit(f"filter {name} deleted successfully")
+    await event.edit(f"الرد {name} تم حذفه بنجاح")
 
 
-@command(pattern="^.clearallfilters$")
+@command(pattern="^.حذف الردود$")
 async def on_all_snip_delete(event):
     remove_all_filters(event.chat_id)
-    await event.edit(f"filters **in current chat** deleted successfully")
+    await event.edit(f"الردود **في هذه المجموعة** تم حذفها بنجاح")
