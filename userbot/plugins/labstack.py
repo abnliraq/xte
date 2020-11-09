@@ -19,7 +19,7 @@ import time
 import json
 import sys
 
-@command(pattern="^.labstack ?(.*)")
+@command(pattern="^.رابط تحميل ?(.*)")
 async def labstack(event):
     if event.fwd_from:
         return
@@ -31,7 +31,7 @@ async def labstack(event):
     elif reply:
         filebase = await event.client.download_media(reply.media, Var.TEMP_DOWNLOAD_DIRECTORY)
     else:
-        await event.edit("Reply to a media file or provide a directory to upload the file to labstack")
+        await event.edit("رد على الميديا لرفعها على labstack")
         return
     filesize = os.path.getsize(filebase)
     filename = os.path.basename(filebase)
