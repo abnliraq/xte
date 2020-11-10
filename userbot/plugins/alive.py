@@ -6,7 +6,7 @@ from platform import uname
 from userbot import ALIVE_NAME
 from userbot.utils import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "**No Name set yet.** [Check Guide.](https://t.me/x3raqe/)"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "**No Name set yet.** [DM.](https://t.me/x3raqe/)"
 
 @command(outgoing=True, pattern="^.alive$")
 async def amireallyalive(alive):
