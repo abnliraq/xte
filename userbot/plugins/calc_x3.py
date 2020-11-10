@@ -1,4 +1,4 @@
- @x3raqe 
+# @x3raqe 
 from telethon import events, errors, functions, types
 import inspect
 import traceback
