@@ -45,7 +45,7 @@ async def fastpurger(purg):
     await done.delete()
 
 
-@register(outgoing=True, pattern="^.مسح رسائلي")
+@register(outgoing=True, pattern="^.م رسالئلي")
 @errors_handler
 async def purgeme(delme):
     """ For .purgeme, delete x count of your latest message."""
