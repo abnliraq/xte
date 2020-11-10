@@ -1,7 +1,6 @@
-# @x3raqe 
+# @X3RAQE
 
-#ممول محمد
-"""QuotLy: Avaible commands: .انستا
+"""QuotLy: Avaible commands: .زخرفه
 """
 import datetime
 import asyncio
@@ -10,30 +9,30 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd(pattern="ستوري ?(.*)"))
+@borg.on(admin_cmd(pattern="زخرفه ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
     if not event.reply_to_msg_id:
-       await event.edit("``` ~ @X3RAQE - .```")
+       await event.edit("``` ~ @X3RAQE ~.```")
        return
     reply_message = await event.get_reply_message() 
     if not reply_message.text:
-       await event.edit("``` ~ @X3RAQE - ```")
+       await event.edit("``` ~ @X3RAQE ~```")
        return
-    chat = "@x3storybot"
+    chat = "@x3raqebot"
     sender = reply_message.sender
     if reply_message.sender.bot:
-       await event.edit("``` ~ @X3RAQE - ```")
+       await event.edit("``` ~ @X3RAQE ~```")
        return
-    await event.edit("`جار ارسال لك التحميل من @x3storybot`")
+    await event.edit("`[Mohammed Nazar ☹️❤️](https://t.me/x3raqe/) جاري الزخرفه `")
     async with event.client.conversation(chat) as conv:
           try:     
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=1077724863))
+              response = conv.wait_event(events.NewMessage(incoming=True,from_users=1143836767))
               await event.client.forward_messages(chat, reply_message)
               response = await response 
           except YouBlockedUserError: 
-              await event.reply("```Please unblock me (@x3storybot) u Nigga```")
+              await event.reply("```Please unblock me (@x3raqebot) u Nigga```")
               return
           if response.text.startswith("Hi!"):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
