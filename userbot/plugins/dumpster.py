@@ -4,7 +4,7 @@ from userbot.utils import admin_cmd
 from telethon.errors.rpcerrorlist import MessageIdInvalidError
 
 
-@borg.on(admin_cmd(pattern="تنظيف ?(.*)"))
+@borg.on(admin_cmd(pattern="ذب الوصخ ?(.*)"))
 async def _(message):
     try:
         obj = message.pattern_match.group(1)
