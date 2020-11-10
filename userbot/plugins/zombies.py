@@ -59,15 +59,15 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 
 @borg.on(admin_cmd(pattern=f"الموتى", allow_sudo=True))
-@borg.on(events.NewMessage(pattern="^.zombies(?: |$)(.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern="^.الموتى(?: |$)(.*)", outgoing=True))
 async def rm_deletedacc(show):
-    """ For .zombies command, list all the ghost/deleted/zombie accounts in a chat. """
+    """ جاري البحث عن الحسابات المحذوفة. """
 
     con = show.pattern_match.group(1).lower()
     del_u = 0
-    del_status = "`No deleted accounts found, Group is clean`"
+    del_status = "`لا يوجد حسابات محذوفة في هذه المحادثة`"
 
-    if con != "clean":
+    if con != "طرد":
         await show.edit("`Searching for ghost/deleted/zombie accounts...`")
         async for user in show.client.iter_participants(show.chat_id):
 
@@ -75,8 +75,8 @@ async def rm_deletedacc(show):
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
-            del_status = f"`Found` **{del_u}** `ghost/deleted/zombie account(s) in this group,\
-            \nclean them by using .zombies clean`"
+            del_status = f"`تم ايجاد` **{del_u}** `من الحسابات المحذوفة,\
+            \nاطردهم .الموتى طرد`"
         await show.edit(del_status)
         return
 
@@ -87,10 +87,10 @@ async def rm_deletedacc(show):
 
     # Well
     if not admin and not creator:
-        await show.edit("`I am not an admin here!`")
+        await show.edit("`مو ادمن هنا!`")
         return
 
-    await show.edit("`Deleting deleted accounts...\nOh I can do that?!?!`")
+    await show.edit("` الطرد...\nOh يمكنني ذلك?!?!`")
     del_u = 0
     del_a = 0
 
@@ -111,7 +111,7 @@ async def rm_deletedacc(show):
 
 
     if del_u > 0:
-        del_status = f"Cleaned **{del_u}** deleted account(s)"
+        del_status = f"تم طرد **{del_u}** حساب محذوف"
 
     if del_a > 0:
         del_status = f"Cleaned **{del_u}** deleted account(s) \
