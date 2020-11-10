@@ -7,7 +7,7 @@ async def startgmute(event):
     if event.fwd_from:
         return
     elif event.is_private:
-        await event.edit("Unexpected issues or ugly errors may occur!")
+        await event.edit("خطأ غير معروف!")
         await asyncio.sleep(3)
         private = True
     reply = await event.get_reply_message()
@@ -18,17 +18,17 @@ async def startgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await event.edit("Please reply to a user or add their into the command to gmute them.")
+        return await event.edit("رد على الشخص ليتم كتمه!!.")
     chat_id = event.chat_id
     chat = await event.get_chat()
     if is_muted(userid, "gmute"):
-        return await event.edit("This user is already gmuted")
+        return await event.edit("هذا المستخدم مكتوم بالفعل!!")
     try:
         mute(userid, "gmute")
     except Exception as e:
         await event.edit("Error occured!\nError is " + str(e))
     else:
-        await event.edit("Successfully gmuted that person")
+        await event.edit(" تم سديت حلكة بعد ميحجي")
 
 @command(outgoing=True, pattern=r"^.ungmute ?(\d+)?")
 async def endgmute(event):
@@ -36,7 +36,7 @@ async def endgmute(event):
     if event.fwd_from:
         return
     elif event.is_private:
-        await event.edit("Unexpected issues or ugly errors may occur!")
+        await event.edit("خطأ غير معروف!")
         await asyncio.sleep(3)
         private = True
     reply = await event.get_reply_message()
@@ -47,16 +47,16 @@ async def endgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await event.edit("Please reply to a user or add their into the command to ungmute them.")
+        return await event.edit("رد على الشخص ليتم الغاء كتمه!!.")
     chat_id = event.chat_id
     if not is_muted(userid, "gmute"):
-        return await event.edit("This user is not gmuted")
+        return await event.edit("هذا المستخدم غير مكتوم بالفعل!!")
     try:
         unmute(userid, "gmute")
     except Exception as e:
         await event.edit("Error occured!\nError is " + str(e))
     else:
-        await event.edit("Successfully ungmuted that person")
+        await event.edit("تم الغاء الكتم , فتحنا حلكك")
 
 @command(outgoing=True, pattern=r"^.gmute ?(\d+)?", allow_sudo=True)
 async def startgmute(event):
@@ -64,7 +64,7 @@ async def startgmute(event):
     if event.fwd_from:
         return
     elif event.is_private:
-        await event.edit("Unexpected issues or ugly errors may occur!")
+        await event.edit("خطأ غير معروف!")
         await asyncio.sleep(3)
         private = True
     reply = await event.get_reply_message()
@@ -75,17 +75,17 @@ async def startgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await event.edit("Please reply to a user or add their into the command to gmute them.")
+        return await event.edit("رد على الشخص ليتم كتمه!!.")
     chat_id = event.chat_id
     chat = await event.get_chat()
     if is_muted(userid, "gmute"):
-        return await event.edit("This user is already gmuted")
+        return await event.edit("هذا المستخدم مكتوم بالفعل!!")
     try:
         mute(userid, "gmute")
     except Exception as e:
         await event.edit("Error occured!\nError is " + str(e))
     else:
-        await event.edit("Successfully gmuted that person")
+        await event.edit("تم سديت حلكة بعد ميحجي")
 
 @command(outgoing=True, pattern=r"^.ungmute ?(\d+)?", allow_sudo=True)
 async def endgmute(event):
@@ -93,7 +93,7 @@ async def endgmute(event):
     if event.fwd_from:
         return
     elif event.is_private:
-        await event.edit("Unexpected issues or ugly errors may occur!")
+        await event.edit("خطأ غير معروف!")
         await asyncio.sleep(3)
         private = True
     reply = await event.get_reply_message()
@@ -104,16 +104,16 @@ async def endgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await event.edit("Please reply to a user or add their into the command to ungmute them.")
+        return await event.edit("رد على الشخص ليتم الغاء كتمه!!.")
     chat_id = event.chat_id
     if not is_muted(userid, "gmute"):
-        return await event.edit("This user is not gmuted")
+        return await event.edit("هذا المستخدم غير مكتوم بالفعل!!")
     try:
         unmute(userid, "gmute")
     except Exception as e:
         await event.edit("Error occured!\nError is " + str(e))
     else:
-        await event.edit("Successfully ungmuted that person")
+        await event.edit("تم الغاء الكتم , فتحنا حلكك")
 
 @command(incoming=True)
 async def watcher(event):
