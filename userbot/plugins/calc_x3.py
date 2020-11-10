@@ -43,7 +43,7 @@ async def _(event):
     else:
         evaluation = "Something went wrong"
 
-    final_output = "**EQUATION**: `{}` \n\n **SOLUTION**: \n`{}` \n".format(cmd, evaluation)
+    final_output = "**المعادلة**: `{}` \n\n **الحل**: \n`{}` \n".format(cmd, evaluation)
     await event.edit(final_output)
 
 async def aexec(code, event):
