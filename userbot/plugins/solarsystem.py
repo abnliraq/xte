@@ -14,7 +14,7 @@ async def _(event):
     animation_interval = 0.1
     animation_ttl = range(0, 549755813888)
     input_str = event.pattern_match.group(1)
-    if input_str == "solarsystem":
+    if input_str == "دورة الشمس":
         await event.edit(input_str)
         animation_chars = [
             "`◼️◼️◼️◼️◼️\n◼️◼️◼️◼️☀\n◼️◼️🌎◼️◼️\n🌕◼️◼️◼️◼️\n◼️◼️◼️◼️◼️`",
